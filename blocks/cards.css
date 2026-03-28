@@ -1,8 +1,8 @@
 .cards {
   padding: 20px 0 40px;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
-  max-width: 70%;
-  min-width: none;
+  max-width: 100%;
+  min-width: 0;
   flex: 1;
 }
 
