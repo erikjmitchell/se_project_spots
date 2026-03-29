@@ -11,6 +11,10 @@ This site is designed for user to upload, discover, and share images. In a safe 
 -HTML
 -CSS
 -Responsive Designs
+-BEM
+-Flexbox
+-CSS Grid
+-Media Queries
 
 ####Deployment
 
