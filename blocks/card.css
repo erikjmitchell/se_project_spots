@@ -16,7 +16,7 @@
 }
 .card__title {
   margin: 0;
-  min-width: 0;
+  max-width: 350px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -26,7 +26,7 @@
 }
 
 .card__like-button {
-  background-image: url(../images/Like\ Icon.svg);
+  background-image: url(../images/likeicon.svg);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -45,5 +45,9 @@
 @media screen and (max-width: 627px) {
   .card__image {
     height: 288px;
+  }
+  .card__title {
+    max-width: 250px;
+    font-size: 16px;
   }
 }
