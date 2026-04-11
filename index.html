@@ -113,9 +113,7 @@
       </footer>
       <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="button" class="modal__close-button">
-            <img src="./images/exiticon.svg" alt="exit icon" />
-          </button>
+          <button type="button" class="modal__close-button"></button>
 
           <h2 class="modal__title">Edit profile</h2>
           <form class="modal__form">
@@ -126,6 +124,7 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type your name"
+                required
               />
             </label>
             <label for="profile-description-input" class="modal__label"
@@ -155,6 +154,7 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste a link to the picture"
+                required
               />
             </label>
             <label for="profile-caption-input" class="modal__label"
