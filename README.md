@@ -15,6 +15,7 @@ This site is designed for user to upload, discover, and share images. In a safe 
 -Flexbox
 -CSS Grid
 -Media Queries
+-Javascript 
 
 ####Deployment
 
