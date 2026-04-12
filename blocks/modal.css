@@ -71,7 +71,6 @@
 .modal__form {
   display: flex;
   flex-direction: column;
-  padding-right: 30px;
 }
 
 .modal__label {
@@ -117,5 +116,14 @@
   }
   .modal__submit-button {
     max-width: none;
+  }
+
+  .modal__container {
+    padding: 22px 12px 12px;
+  }
+
+  .modal__close-button {
+    top: 10px;
+    right: 12px;
   }
 }
