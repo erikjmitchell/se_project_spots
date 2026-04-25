@@ -46,12 +46,32 @@ const newPostButton = document.querySelector(".profile__add-button");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseButton = newPostModal.querySelector(".modal__close-button");
 
-const newPostCardImageInput = newPostModal.querySelector("#card-image-input");
-const newPostCaptionInput = newPostModal.querySelector(
-  "#profile-caption-input",
-);
+const linkInputEl = newPostModal.querySelector("#card_image-input");
+const captionInputEl = newPostModal.querySelector("#profile-caption-input");
 const profileNameEl = document.querySelector(".profile__name");
 const profileDescriptionEl = document.querySelector(".profile__description");
+
+const cardTemplate = document.querySelector("#card-template");
+
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+
+  const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
+  cardLikeBtnEl.addEventListener("click", () => {
+    cardLikeBtnEl.classList.toggle(".card__like-button_active");
+  });
+
+  return cardElement;
+}
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
@@ -90,14 +110,21 @@ editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 function handleNewPostSubmit(evt) {
   evt.preventDefault();
-  console.log(newPostCardImageInput.value);
-  console.log(newPostCaptionInput.value);
+
+  const inputValues = {
+    name: captionInputEl.value,
+    link: linkInputEl.value,
+  };
+
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
+
   closeModal(newPostModal);
 }
 
 newPostModal.addEventListener("submit", handleNewPostSubmit);
 
-initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
+initialCards.forEach((item) => {
+  const cardElement = getCardElement(item);
+  cardsList.append(cardElement);
 });
