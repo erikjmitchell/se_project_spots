@@ -12,6 +12,11 @@
   display: block;
   border-radius: 8px;
   margin-bottom: 12px;
+  cursor: pointer;
+}
+.card__image:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
 }
 
 .card__delete-button {
@@ -23,9 +28,10 @@
   background-color: transparent;
   background-image: url(../images/greydeletebtn.svg);
   border: none;
-  opacity: 40%;
+  opacity: 0.4;
   background-repeat: no-repeat;
   background-position: center;
+  cursor: pointer;
 }
 
 .card__delete-button:hover {
@@ -58,7 +64,7 @@
   height: 20px;
   border: none;
   background-color: transparent;
-  opacity: 40%;
+  opacity: 0.4;
   cursor: pointer;
 }
 
