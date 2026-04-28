@@ -56,7 +56,6 @@
 .modal__caption {
   color: white;
   font-size: 20px;
-  width: 198px;
   height: 24px;
   background-color: #212121;
   padding: 4px 8px;
@@ -85,6 +84,7 @@
 }
 
 .modal__close-button_type_preview {
+  background-image: url(../images/previewexitbtn.svg);
   top: 0;
   right: -48.5px;
   cursor: pointer;
@@ -141,7 +141,6 @@
   opacity: 1;
 }
 .modal__submit-button:hover {
-  color: #212121cc;
   opacity: 0.4;
 }
 
