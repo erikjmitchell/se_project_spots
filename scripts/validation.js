@@ -2,15 +2,15 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-button",
-  inactiveButtonClass: "modal__button_disabled",
+  inactiveButtonClass: "modal__submit-button_disabled",
   inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error",
+  errorClass: "modal__error_visible",
 };
 
-const showInputError = (formEl, inputEl, errorMsg) => {
+const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = errorMsg;
-  inputEl.classList.add(config.inputErrorClass);
+  inputEl.classList.add(config.ErrorClass);
 };
 
 const hideInputError = (formEl, inputEl) => {

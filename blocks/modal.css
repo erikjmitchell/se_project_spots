@@ -55,10 +55,10 @@
 
 .modal__caption {
   color: white;
-  font-size: 20px;
-  height: 24px;
+  font-size: 16px;
+  line-height: 1.5;
   background-color: #212121;
-  padding: 4px 8px;
+  padding: 4px 0;
   border-radius: 8px;
 }
 
@@ -140,6 +140,13 @@
   color: #ff0000b2;
   font-size: 16px;
   margin-top: 8px;
+}
+
+.modal__error_visible {
+  background-color: #ccc;
+  cursor: none;
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .modal__submit-button {

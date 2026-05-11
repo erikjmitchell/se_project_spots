@@ -99,9 +99,22 @@ function getCardElement(data) {
 
   return cardElement;
 }
+function handleEscape(evt) {
+  if (evt.key === "Escape") {
+    closeModal(document.querySelector(".modal_is-opened"));
+  }
+}
+
+function handleOverlayClick(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+}
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscape);
+  modal.addEventListener("click", handleOverlayClick);
 }
 
 function closeModal(modal) {
@@ -144,7 +157,7 @@ function handleNewPostSubmit(evt) {
   };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-  disabledButton(cardSubmitBtn);
+  disableButton(cardSubmitBtn, settings);
   evt.target.reset();
 
   closeModal(newPostModal);
