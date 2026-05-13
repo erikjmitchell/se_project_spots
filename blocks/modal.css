@@ -29,6 +29,12 @@
   pointer-events: auto;
 }
 
+.modal__submit-button_disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .modal__container {
   max-width: 730px;
   width: 100%;
