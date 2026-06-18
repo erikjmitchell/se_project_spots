@@ -1,3 +1,5 @@
+import { enableValidation, settings } from "../scripts/validation.js";
+import "./index.css";
 const initialCards = [
   {
     name: "Golden Gate Bridge",
@@ -60,6 +62,8 @@ const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-button");
 const previewImageEl = previewModal.querySelector(".modal__image");
 const previewCaptionEl = previewModal.querySelector(".modal__caption");
+
+enableValidation(settings);
 
 previewModalCloseBtn.addEventListener("click", function () {
   closeModal(previewModal);
