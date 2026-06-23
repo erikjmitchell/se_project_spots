@@ -97,6 +97,13 @@ const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = deleteModal.querySelector(".modal__form");
 const cancelBtn = deleteModal.querySelector(".modal__cancel-button");
+const closeBtnPreview = deleteModal.querySelector(
+  ".modal__close-button_type_preview",
+);
+
+closeBtnPreview.addEventListener("click", function () {
+  closeModal(deleteModal);
+});
 
 enableValidation(settings);
 
