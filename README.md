@@ -24,5 +24,5 @@ This site is designed for user to upload, discover, and share images. In a safe 
 
 ##### Project Pitch Video
 
-Check out [this video](https://www.loom.com/share/7162e8e49da84a9e9471f3afacb07a66), where I describe my
+Check out [this video](https://www.loom.com/share/742322ff7aaf4e3aa71d3fc16fa9d720) where I describe my
 project and some challenges I faced while building it.
