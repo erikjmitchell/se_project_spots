@@ -66,5 +66,4 @@ export const enableValidation = (config) => {
   formList.forEach((formEl) => {
     setEventListeners(formEl, config);
   });
-
 };
