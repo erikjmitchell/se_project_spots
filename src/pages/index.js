@@ -101,6 +101,10 @@ const closeBtnPreview = deleteModal.querySelector(
   ".modal__close-button_type_preview",
 );
 
+avatarModalCloseBtn.addEventListener("click", function () {
+  closeModal(avatarModal);
+});
+
 closeBtnPreview.addEventListener("click", function () {
   closeModal(deleteModal);
 });
