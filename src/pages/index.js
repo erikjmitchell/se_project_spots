@@ -95,7 +95,7 @@ const profileAvatarEl = document.querySelector(".profile__avatar");
 const avatarModalBtn = document.querySelector(".profile__avatar-btn");
 
 const deleteModal = document.querySelector("#delete-modal");
-const deleteForm = deleteModal.querySelector(".modal__form");
+const deleteForm = deleteModal.querySelector(".modal__form_type_delete");
 const cancelBtn = deleteModal.querySelector(".modal__cancel-button");
 const closeBtnPreview = deleteModal.querySelector(
   ".modal__close-button_type_preview",
@@ -151,9 +151,6 @@ function getCardElement(data) {
 
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
 
-  cardDeleteBtnEl.addEventListener("click", () => {
-    handleDeleteCard(cardElement, data);
-  });
   function handleDeleteCard(cardElement, data) {
     selectedCard = cardElement;
     selectedCardId = data._id;
@@ -214,9 +211,6 @@ newPostCloseButton.addEventListener("click", function () {
 avatarModalBtn.addEventListener("click", function () {
   openModal(avatarModal);
 });
-avatarModalBtn.addEventListener("click", function () {
-  closeModal(avatarModal);
-});
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
@@ -260,14 +254,13 @@ function handleDeleteSubmit(evt) {
 }
 
 avatarForm.addEventListener("submit", handleAvatarSubmit);
-cardDeleteBtnEl.addEventListener("submit", handleDeleteCard);
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
   api
     .editUserInfo({
-      name: data.name,
-      about: data.about,
+      name: editProfileNameInput.value,
+      about: editProfileDescriptionInput.value,
     })
     .then((data) => {
       profileDescriptionEl.textContent = data.about;
