@@ -45,6 +45,40 @@
   padding: 32px 50px;
   position: relative;
 }
+.modal__form_type_delete {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.modal__delete-button {
+  background-color: #ff4d5a;
+  color: white;
+  border: none;
+  padding: 18px, 32px;
+  border-radius: 8px;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.modal__delete-button:hover {
+  background-color: #ff3333;
+}
+
+.modal__cancel-button {
+  padding: 18px, 32px;
+  border-radius: 8px;
+  gap: 8px;
+  background-color: white;
+  color: black;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+}
+
+.modal__cancel-button:hover {
+  background-color: #212121;
+}
 
 .modal__image-container {
   position: relative;
@@ -208,5 +242,16 @@
     padding: 4px 8px;
     border-radius: 8px;
     background-color: #212121;
+  }
+
+  .modal__delete-button {
+    background-color: #ff4d5a;
+    color: white;
+    border: none;
+  }
+  .modal__cancel-button {
+    background-color: white;
+    color: black;
+    border: 1px solid #cccccc;
   }
 }
