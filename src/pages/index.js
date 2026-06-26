@@ -60,6 +60,9 @@ api
 
 const editProfileButton = document.querySelector(".profile__edit-button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
+const editProfileSubmitBtn = editProfileModal.querySelector(
+  ".modal__submit-button",
+);
 
 const editProfileCloseButton = editProfileModal.querySelector(
   ".modal__close-button",
@@ -101,6 +104,21 @@ const closeBtnPreview = deleteModal.querySelector(
   ".modal__close-button_type_preview",
 );
 
+/*const hasInvalidInput = (inputList) => {
+  return inputList.some((inputElement) => !inputElement.validity.valid);
+};
+const toggleButtonState = (inputList, buttonElement) => {
+  if (hasInvalidInput(inputList)) {
+    buttonElement.classList.add("form__submit_inactive");
+  } else {
+    buttonElement.classList.remove("form__submit_inactive");
+  }
+};inputElement.addEventListener("input", () => {
+  checkInputValidity(formElement, inputElement);
+  toggleButtonState(inputList, buttonElement);
+});
+*/
+
 avatarModalCloseBtn.addEventListener("click", function () {
   closeModal(avatarModal);
 });
@@ -135,6 +153,8 @@ function getCardElement(data) {
   cardImageEl.src = data.link;
 
   const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
+  const isLiked = data.likes.some((like) => like._id === user._id);
+
   cardLikeBtnEl.addEventListener("click", () => {
     if (cardLikeBtnEl.classList.contains("card__like-button_active")) {
       api
@@ -205,6 +225,10 @@ editProfileButton.addEventListener("click", function () {
     editProfileDescriptionInput,
   ]);
   openModal(editProfileModal);
+  toggleButtonState(editProfileForm, [
+    editProfileNameInput,
+    editProfileDescriptionInput,
+  ]);
 });
 
 editProfileCloseButton.addEventListener("click", function () {
