@@ -1,4 +1,9 @@
-import { enableValidation, settings } from "../scripts/validation.js";
+import {
+  enableValidation,
+  settings,
+  toggleButtonState,
+  resetValidation,
+} from "../scripts/validation.js";
 import "../pages/index.css";
 import Api from "../utils/Api.js";
 
