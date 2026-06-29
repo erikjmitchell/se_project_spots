@@ -102,6 +102,7 @@ const avatarModalCloseBtn = avatarModal.querySelector(".modal__close-button");
 const avatarForm = avatarModal.querySelector(".modal__form");
 const profileAvatarEl = document.querySelector(".profile__avatar");
 const avatarModalBtn = document.querySelector(".profile__avatar-btn");
+const avatarInputEl = document.querySelector("#profile-avatar-input");
 
 const deleteModal = document.querySelector("#delete-modal");
 const deleteForm = deleteModal.querySelector(".modal__form_type_delete");
@@ -193,12 +194,6 @@ function handleEscape(evt) {
   }
 }
 
-function handleOverlayClick(evt) {
-  if (evt.target.classList.contains("modal")) {
-    closeModal(evt.target);
-  }
-}
-
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
   document.addEventListener("keydown", handleEscape);
@@ -238,7 +233,7 @@ avatarModalBtn.addEventListener("click", function () {
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
-
+  const avatarInputEl = document.querySelector("#profile-avatar-input");
   const submitBtn = avatarForm.querySelector(".modal__submit-button");
   const originalText = submitBtn.textContent;
 
@@ -289,7 +284,7 @@ function handleEditProfileSubmit(evt) {
     .then((data) => {
       profileDescriptionEl.textContent = data.about;
       profileNameEl.textContent = data.name;
-
+      submitBtn.textContent = "Saving...";
       closeModal(editProfileModal);
     })
     .catch(console.error);
