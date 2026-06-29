@@ -233,7 +233,7 @@ avatarModalBtn.addEventListener("click", function () {
 
 function handleAvatarSubmit(evt) {
   evt.preventDefault();
-  const avatarInputEl = document.querySelector("#profile-avatar-input");
+
   const submitBtn = avatarForm.querySelector(".modal__submit-button");
   const originalText = submitBtn.textContent;
 
