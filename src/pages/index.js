@@ -237,8 +237,6 @@ function handleAvatarSubmit(evt) {
   const submitBtn = avatarForm.querySelector(".modal__submit-button");
   const originalText = submitBtn.textContent;
 
-  submitBtn.textContent = "Saving...";
-
   api
     .updateAvatar(avatarInputEl.value)
     .then((data) => {
@@ -284,7 +282,7 @@ function handleEditProfileSubmit(evt) {
     .then((data) => {
       profileDescriptionEl.textContent = data.about;
       profileNameEl.textContent = data.name;
-      submitBtn.textContent = "Saving...";
+      submitBtn.textContent = " Save -> Saving... -> Save";
       closeModal(editProfileModal);
     })
     .catch(console.error);
