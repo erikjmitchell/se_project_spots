@@ -56,7 +56,7 @@ api
     console.log(cards);
     profileNameEl.textContent = user.name;
     profileDescriptionEl.textContent = user.about;
-    linkInputEl.src = user.avatar;
+    profileAvatarEl.src = user.avatar;
     cards.forEach((item) => {
       const cardElement = getCardElement(item);
       cardsList.append(cardElement);
@@ -194,6 +194,12 @@ function handleEscape(evt) {
   }
 }
 
+function handleOverlayClick(evt) {
+  if (evt.target.classList.contains("modal")) {
+    closeModal(evt.target);
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
   document.addEventListener("keydown", handleEscape);
@@ -203,6 +209,7 @@ function openModal(modal) {
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
   document.removeEventListener("keydown", handleEscape);
+  modal.removeEventListener("click", handleOverlayClick);
 }
 
 editProfileButton.addEventListener("click", function () {
@@ -274,6 +281,8 @@ avatarForm.addEventListener("submit", handleAvatarSubmit);
 
 function handleEditProfileSubmit(evt) {
   evt.preventDefault();
+  const submitBtn = evt.submitter;
+  submitBtn.textContent = "Saving...";
   api
     .editUserInfo({
       name: editProfileNameInput.value,
@@ -282,10 +291,13 @@ function handleEditProfileSubmit(evt) {
     .then((data) => {
       profileDescriptionEl.textContent = data.about;
       profileNameEl.textContent = data.name;
-      submitBtn.textContent = " Save -> Saving... -> Save";
+
       closeModal(editProfileModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      submitBtn.textContent = "Save";
+    });
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
