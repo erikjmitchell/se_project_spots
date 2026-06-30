@@ -17,6 +17,9 @@ This site is designed for user to upload, discover, and share images. In a safe 
 -Media Queries
 -Javascript
 -enableValidation
+-Webpack
+-Object-Oriented Programming (OOP)
+-API Request(GET,POST,PATCH, DELETE)
 
 ####Deployment
 

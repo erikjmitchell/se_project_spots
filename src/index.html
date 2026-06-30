@@ -161,12 +161,12 @@
         </div>
       </div>
     </div>
-    <div class="modal" id="avatar-modal" novalidate>
+    <div class="modal" id="avatar-modal">
       <div class="modal__container">
         <button type="button" class="modal__close-button"></button>
 
         <h2 class="modal__title">Edit avatar</h2>
-        <form class="modal__form" id="edit-avatar-form">
+        <form class="modal__form" id="edit-avatar-form" novalidate>
           <label for="profile-avatar-input" class="modal__label"
             >Avatar
 
@@ -177,7 +177,7 @@
               placeholder="Paste the link to an image"
               required
             />
-            <span id="card-avatar-input-error" class="modal__error"></span>
+            <span id="profile-avatar-input-error" class="modal__error"></span>
           </label>
 
           <button type="submit" class="modal__submit-button">Save</button>
